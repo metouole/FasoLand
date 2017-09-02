@@ -12,8 +12,12 @@
 
 		<div class="links btn-group">
 			<%= link_to "Back", root_path, class: "btn btn-default" %>
-			<%= link_to "Edit", edit_message_path, class: "btn btn-primary"  %>
-			<%= link_to "delete", root_path, class: "btn btn-danger"  %>
+			<% if utilisateur_signed_in? %>
+				<% if @message.utilisateur_id == current_utilisateur.id %>
+				<%= link_to "Edit", edit_message_path, class: "btn btn-primary"  %>
+				<%= link_to "delete", message_path(@message), method: :delete, data: { confirm: "Are You Sure?"}, class: "btn btn-danger"  %>
+			<% end %>
+			<% end %>
 		</div>
 		
 	</div>

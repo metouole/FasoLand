@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+	before_action :authenticate_utilisateur! 
 	before_action :find_message, only: [:create, :edit, :update, :destroy]
 	before_action :find_comment, only: [:edit, :update, :destroy]
 
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
 		end
 	end
 
-	def destroy
+	def destroy 
 		@comment.destroy
 		redirect_to message_path(@message) 
 	end
