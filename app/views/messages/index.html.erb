@@ -1,2 +1,9 @@
-<h1>Welcome on FasoLand!</h1>
-<p>The world of Freedom, you can tell anything to anyone.</p>
+<% @messages.each do |m| %>
+	<div class="col-md-10 col-md-offset-2">
+		<div class="message">
+			<h2 class="message-title"> <%= m.title %></h2>
+			<%= link_to "Join Conversation", m, class: "btn-custom" %>
+		</div>	
+	</div>
+<% end %>
+
