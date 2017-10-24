@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FasoLand</title>
+    <title>Breakheart</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,21 +12,21 @@
   <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
-        <%= link_to "FasoLand Forum", root_path, class: "navbar-brand" %>
+        <%= link_to "Breakheart Forum", root_path, class: "navbar-brand" %>
         
         </div>
 
         <ul class="navbar-nav nav navbar-right">
           <% if utilisateur_signed_in? %>
-            <li><%= link_to "Sign Out", destroy_utilisateur_session_path, method: :delete %></li>
+            <li><%= link_to "Deconnexion", destroy_utilisateur_session_path, method: :delete %></li>
           <% else %>
-            <li><%= link_to "Log In", new_utilisateur_session_path %></li>
-            <li><%= link_to "Sign Up", new_utilisateur_registration_path %></li>
+            <li><%= link_to "Connexion", new_utilisateur_session_path %></li>
+            <li><%= link_to "Enregistrer", new_utilisateur_registration_path %></li>
           <% end %>
         </ul>
         
          <% if utilisateur_signed_in? %>
-          <p><%= link_to "New Contribution", new_message_path, class: "navbar-text navbar-link" %></p>
+          <p><%= link_to "New Story", new_message_path, class: "navbar-text navbar-link" %></p>
           <% end %>
         </div>
       </nav>
